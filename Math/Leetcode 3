@@ -1,0 +1,23 @@
+//2591. Distribute Money to Maximum Children
+
+class Solution(object):
+    def distMoney(self, money, children):
+        if money<children: 
+            return -1
+        money-=children
+        c=0
+        while money>=7 and children>0:
+            money-=7
+            c+=1
+            children-=1
+        if(c==0):
+            return c
+        else:
+            if children==0 and money>0:
+                c-=1
+            if children==1 and money==3:
+                c-=1
+
+        return c
+        
+ 
